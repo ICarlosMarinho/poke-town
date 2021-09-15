@@ -9,4 +9,12 @@ export const HeaderContainer = styled.header<ThemeProps>`
   background-color: ${(props) =>
     props.darkMode ? props.theme.dark.primary : props.theme.light.primary};
   border-bottom: 5px solid ${(props) => (props.darkMode ? "#fff" : "#000")};
+  height: 70px;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    row-gap: 10px;
+    height: fit-content;
+    padding: 10px;
+  }
 `;

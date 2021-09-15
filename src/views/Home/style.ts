@@ -8,8 +8,8 @@ export const HomeContainer = styled.div`
     "header"
     "main"
     "footer";
-  grid-template-rows: 70px auto 70px;
-  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr 70px;
+  grid-template-columns: 1fr;
 `;
 
 export const MainContainer = styled.main<ThemeProps>`

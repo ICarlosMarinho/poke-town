@@ -19,6 +19,7 @@ export const PokemonInfo = styled.section`
   align-items: center;
   column-gap: 20px;
   position: relative;
+  flex-wrap: wrap;
 `;
 
 export const PokemonName = styled.h2`
