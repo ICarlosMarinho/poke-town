@@ -30,10 +30,10 @@ const Home: FC = () => {
 
   return (
     <HomeContainer>
+      <LoadingAnimation />
       <Header />
       <MainContainer darkMode={darkMode}>
         <PokemonCard pokemon={pokemon} />
-        <LoadingAnimation />
       </MainContainer>
       <Footer />
     </HomeContainer>
