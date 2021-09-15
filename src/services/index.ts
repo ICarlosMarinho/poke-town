@@ -16,5 +16,5 @@ export const fetchPokemon = (
       setFetchError(true);
       console.log(error);
     })
-    .finally(() => setLoading(true));
+    .finally(() => setLoading(false));
 };
