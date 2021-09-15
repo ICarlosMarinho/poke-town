@@ -1,27 +1,18 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { ThemeProvider } from "styled-components";
 
 import AppContext from "./hooks/AppContext";
+import useAppState from "./hooks/useAppState";
 import GlobalStyle from "./style";
 import themes from "./themes";
 import Home from "./views/Home";
 
 const App: FC = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const [favorites, setFavorites] = useState<Pokemon[] | null>(null);
-  const [pokemon, setPokemon] = useState<Pokemon | null>(null);
+  const state = useAppState();
 
   return (
     <>
-      <AppContext.Provider
-        value={{
-          darkMode,
-          setDarkMode,
-          favorites,
-          setFavorites,
-          pokemon,
-          setPokemon,
-        }}>
+      <AppContext.Provider value={state}>
         <ThemeProvider theme={themes}>
           <GlobalStyle />
           <Home />

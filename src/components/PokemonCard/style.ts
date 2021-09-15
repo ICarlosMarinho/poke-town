@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const CardContainer = styled.div<ThemeProps>`
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
-  border: 5px solid #000;
+  row-gap: 20px;
+  border: 5px solid ${(props) => (props.darkMode ? "#fff" : "#000")};
   border-radius: 10px;
   width: max-content;
   padding: 10px;

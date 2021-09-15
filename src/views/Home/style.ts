@@ -8,7 +8,7 @@ export const HomeContainer = styled.div`
     "header"
     "main"
     "footer";
-  grid-template-rows: 60px auto 60px;
+  grid-template-rows: 70px auto 70px;
   grid-template-columns: 100%;
 `;
 

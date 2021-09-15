@@ -12,15 +12,24 @@ interface Pokemon {
   types: string[];
 }
 
-interface AppContext {
+interface AppState {
+  fetchError: boolean;
+  setFetchError: (fetchError: boolean) => void;
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
   darkMode: boolean;
-  setDarkMode: ((darkMode: boolean) => void) | null;
+  setDarkMode: (darkMode: boolean) => void;
   favorites: Pokemon[] | null;
-  setFavorites: ((favorites: Pokemon[]) => void) | null;
+  setFavorites: (favorites: Pokemon[]) => void;
   pokemon: Pokemon | null;
-  setPokemon: ((pokemon: Pokemon) => void) | null;
+  setPokemon: (pokemon: Pokemon) => void;
 }
 
 interface ThemeProps {
   darkMode: boolean;
+}
+
+interface SizeProps {
+  width?: string;
+  height?: string;
 }

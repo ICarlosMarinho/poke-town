@@ -1,8 +1,17 @@
 import axios from "axios";
 import { getFormattedPokemon } from "../utils";
 
-export const fetchPokemon = async (id: number): Promise<Pokemon> => {
-  const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+export const fetchPokemon = (
+  id: number,
+  setPokemon: (pokemon: Pokemon) => void,
+  setLoading: (loading: boolean) => void,
+  setFetchError: (fetchError: boolean) => void
+): void => {
+  setLoading(true);
 
-  return getFormattedPokemon(data);
+  axios
+    .get(`https://pokeapi.co/api/v2/pokemon/${id}`, { timeout: 5000 })
+    .then(({ data }) => setPokemon(getFormattedPokemon(data)))
+    .catch(() => setFetchError(true))
+    .finally(() => setLoading(false));
 };

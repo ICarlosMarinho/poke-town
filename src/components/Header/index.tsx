@@ -1,18 +1,20 @@
 import React, { FC, useContext } from "react";
 import AppContext from "../../hooks/AppContext";
+import Button from "../Button";
 
-import { DarkModeButton, HeaderContainer } from "./style";
+import { HeaderContainer } from "./style";
 
 const Header: FC = () => {
   const { darkMode, setDarkMode } = useContext(AppContext);
 
-  const handleClick = () => {
-    if (setDarkMode) setDarkMode(!darkMode);
-  };
+  const handleClick = () => setDarkMode(!darkMode);
 
   return (
     <HeaderContainer darkMode={darkMode}>
-      <DarkModeButton onClick={handleClick}>Theme</DarkModeButton>
+      <h1>Poke Town</h1>
+      <Button onClick={handleClick}>{`Tema ${
+        darkMode ? "Claro" : "Escuro"
+      }`}</Button>
     </HeaderContainer>
   );
 };
