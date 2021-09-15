@@ -6,9 +6,10 @@ export const StyledButton = styled.button<SizeProps>`
   font-weight: bold;
   border: none;
   width: ${(props) => props.width || "fit-content"};
-  height: ${(props) => props.height || "auto"};
+  height: ${(props) => props.height || "35px"};
   padding: 10px;
   position: relative;
+  font-family: Electrolize, Helvetica, sans-serif;
 
   &:hover {
     cursor: pointer;

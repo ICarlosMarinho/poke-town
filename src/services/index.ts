@@ -2,7 +2,7 @@ import axios from "axios";
 import { getFormattedPokemon } from "../utils";
 
 export const fetchPokemon = (
-  id: number,
+  searchKey: string,
   setPokemon: (pokemon: Pokemon) => void,
   setLoading: (loading: boolean) => void,
   setFetchError: (fetchError: boolean) => void
@@ -10,7 +10,7 @@ export const fetchPokemon = (
   setLoading(true);
 
   axios
-    .get(`https://pokeapi.co/api/v2/pokemon/${id}`, { timeout: 5000 })
+    .get(`https://pokeapi.co/api/v2/pokemon/${searchKey}`, { timeout: 5000 })
     .then(({ data }) => setPokemon(getFormattedPokemon(data)))
     .catch(() => setFetchError(true))
     .finally(() => setLoading(false));

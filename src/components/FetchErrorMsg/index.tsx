@@ -5,14 +5,13 @@ import AppContext from "../../hooks/AppContext";
 import { fetchPokemon } from "../../services";
 
 const FetchErrorMsg = () => {
-  const { setLoading, setFetchError, setPokemon } = useContext(AppContext);
+  const { setLoading, setFetchError, setPokemon, searchKey } =
+    useContext(AppContext);
 
   const handleClick = () => {
     setFetchError(false);
 
-    const id = Math.floor(Math.random() * 898 + 1);
-
-    fetchPokemon(id, setPokemon, setLoading, setFetchError);
+    fetchPokemon(searchKey, setPokemon, setLoading, setFetchError);
   };
 
   return (

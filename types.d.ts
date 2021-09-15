@@ -13,6 +13,8 @@ interface Pokemon {
 }
 
 interface AppState {
+  searchKey: string;
+  setSearchKey: (searchKey: string) => void;
   fetchError: boolean;
   setFetchError: (fetchError: boolean) => void;
   loading: boolean;

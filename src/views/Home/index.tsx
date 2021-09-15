@@ -9,14 +9,24 @@ import LoadingAnimation from "../../components/LoadingAnimation";
 import Footer from "../../components/Footer";
 
 const Home: FC = () => {
-  const { pokemon, setPokemon, darkMode, setLoading, setFetchError } =
-    useContext(AppContext);
+  const {
+    pokemon,
+    setPokemon,
+    darkMode,
+    setLoading,
+    setFetchError,
+    searchKey,
+    setSearchKey,
+  } = useContext(AppContext);
 
   useEffect(() => {
-    const id = Math.floor(Math.random() * 898 + 1);
-
-    fetchPokemon(id, setPokemon, setLoading, setFetchError);
+    setSearchKey(Math.floor(Math.random() * 898 + 1).toString());
   }, []);
+
+  useEffect(() => {
+    if (searchKey.length)
+      fetchPokemon(searchKey, setPokemon, setLoading, setFetchError);
+  }, [searchKey]);
 
   return (
     <HomeContainer>

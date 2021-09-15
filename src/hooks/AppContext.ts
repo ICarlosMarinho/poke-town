@@ -1,6 +1,8 @@
 import { createContext } from "react";
 
 const AppContext = createContext<AppState>({
+  searchKey: "",
+  setSearchKey: () => null,
   darkMode: false,
   setDarkMode: () => null,
   favorites: new Array<Pokemon>(),
