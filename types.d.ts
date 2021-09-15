@@ -4,12 +4,22 @@ declare module "*.svg" {
   export default content;
 }
 
+interface PokemonStats {
+  attack: number;
+  defense: number;
+  hp: number;
+}
+
 interface Pokemon {
   id: number;
   name: string;
   height: number;
-  imgUrl: string;
+  weight: number;
+  stats: PokemonStats;
+  imgDefaultUrl: string;
+  imgShinyUrl: string;
   types: string[];
+  abilities: string[];
 }
 
 interface AppState {

@@ -12,6 +12,9 @@ export const fetchPokemon = (
   axios
     .get(`https://pokeapi.co/api/v2/pokemon/${searchKey}`, { timeout: 5000 })
     .then(({ data }) => setPokemon(getFormattedPokemon(data)))
-    .catch(() => setFetchError(true))
+    .catch((error: Error) => {
+      setFetchError(true);
+      console.log(error);
+    })
     .finally(() => setLoading(false));
 };
